@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
 
 const Input = () => {
-  //TODO: Email input 밑에 vaildEmail이 false일 경우 에러 메세지
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [validEmail, setValidEmail] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const inputEmailRef = useRef();
 
@@ -13,6 +12,7 @@ const Input = () => {
     const regex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (regex.test(evt.target.value)) {
+      setShowMessage(false);
       setValidEmail(true);
     } else {
       setValidEmail(false);
@@ -20,9 +20,20 @@ const Input = () => {
     setEmail(evt.target.value);
   };
 
+  const onLeaveFocus = (evt) => {
+    if (!inputEmailRef.current) return;
+    if (
+      !inputEmailRef.current.contains(evt.target) &&
+      email.length > 0 &&
+      !validEmail
+    ) {
+      setShowMessage(true);
+    }
+  };
+
   return (
-    <div>
-      <div className="input-container">
+    <div onClick={onLeaveFocus}>
+      <div className="input">
         <label htmlFor="email">E-mail</label>
         <div className="inputIcon-container">
           <input
@@ -41,9 +52,11 @@ const Input = () => {
             }`}
           ></i>
         </div>
-        <div className="email-errorMsg  ">Invalid e-mail address.</div>
+        <div className={showMessage ? 'email-errorMsg' : 'none'}>
+          Invalid e-mail address.
+        </div>
       </div>
-      <div className="input-container">
+      <div className="input">
         <label htmlFor="password">Password</label>
         <div className="inputIcon-container">
           <input
