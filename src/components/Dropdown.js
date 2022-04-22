@@ -41,13 +41,14 @@ function Dropdown() {
   const onChangeSymbol = (evt) => {
     const inputValue = evt.target.value;
     setSymbol(inputValue);
-    if (inputValue.length) {
+    if (inputValue.length > 0) {
       setSearchItem(() =>
         item.filter((value) => {
           return value.toLowerCase().includes(inputValue.toLowerCase());
         })
       );
     } else {
+      setSearchItem(item);
     }
   };
 
@@ -79,6 +80,7 @@ function Dropdown() {
           {/* TODO: 아이콘이 width를 차지에서 인풋이 클릭이 안되는 상황 */}
           <i className="fa-solid fa-magnifying-glass" />
         </div>
+        <div className="item">All Symbols</div>
         {renderItem()}
       </div>
     </div>

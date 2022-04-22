@@ -28,7 +28,7 @@ const Slider = () => {
     return arr;
   };
   return (
-    <div>
+    <div style={{ marginBottom: '50px' }}>
       <div className="percent">
         <span className="black">{percent}</span>
         <span>%</span>

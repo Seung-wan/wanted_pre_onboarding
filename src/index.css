@@ -11,27 +11,109 @@ body {
   align-items: center;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
 /* Toggle.js */
 
-.container {
-  width: 500px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #d3d3d3;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 50px;
 }
 
-.button {
-  width: 40%;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #d3d3d3;
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.button.clicked {
-  background-color: #fff;
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: '';
+  height: 42px;
+  width: 150px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(142px);
+}
+
+.item1 {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  color: #999;
+}
+.item2 {
+  position: absolute;
+  right: 25%;
+  transform: translateX(50%);
+  cursor: pointer;
+  color: #999;
+}
+
+/* Tab.js */
+.tab {
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.tab > .tab-container {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  color: #999;
+}
+
+/* .tab > .tab-container.checked {
+  color: black;
+} */
+
+.tab > .tab-container > label {
+  cursor: pointer;
+}
+
+.tab > .tab-container > label.bold {
+  color: black;
+}
+
+.tab input[type='radio'] {
+  display: none;
+}
+
+#slider {
+  width: 33%;
+  border-bottom: 2px solid #009999;
+  transition: transform 0.3s;
+}
+
+#slider.s2 {
+  transform: translateX(100%);
+}
+
+#slider.s3 {
+  transform: translateX(200%);
 }
 
 /* Slider.js */
@@ -221,7 +303,7 @@ input[type='range']::-webkit-slider-thumb {
   display: none;
 }
 
-.fa-solid {
+.inputIcon-container .fa-solid {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -264,8 +346,11 @@ input[type='range']::-webkit-slider-thumb {
   color: black;
 }
 
+.dropdown > .title {
+  border: 1px solid #d3d3d3;
+}
 .dropdown-list {
-  border: 1px solid black;
+  border: 1px solid #d3d3d3;
   border-top: none;
 }
 
@@ -278,13 +363,19 @@ input[type='range']::-webkit-slider-thumb {
   width: 100%;
   height: 50px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #d3d3d3;
   outline: none;
+}
+.fa-caret-down {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: #999;
 }
 
 .fa-magnifying-glass {
   position: absolute;
-  width: 100%;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
@@ -328,4 +419,8 @@ input[type='range']::-webkit-slider-thumb {
 .item {
   padding: 10px 0px 10px 10px;
   cursor: pointer;
+}
+
+.item:hover {
+  background-color: #d3d3d3;
 }

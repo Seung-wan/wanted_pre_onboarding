@@ -32,7 +32,7 @@ const Input = () => {
   };
 
   return (
-    <div onClick={onLeaveFocus}>
+    <div style={{ marginBottom: '50px' }} onClick={onLeaveFocus}>
       <div className="input">
         <label htmlFor="email">E-mail</label>
         <div className="inputIcon-container">

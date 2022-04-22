@@ -2,17 +2,16 @@ import Toggle from './components/Toggle';
 import Slider from './components/Slider';
 import Input from './components/Input';
 import Dropdown from './components/Dropdown';
+import Tab from './components/Tab';
 function App() {
   return (
-    <>
-      {/* <Toggle /> */}
-      {/* <br /> */}
+    <div className="app-container">
+      <Toggle />
+      <Tab />
       <Slider />
-      <br />
       <Input />
-      <br />
       <Dropdown />
-    </>
+    </div>
   );
 }
 

@@ -1,17 +1,14 @@
 import React from 'react';
 
 const Toggle = () => {
-  const clickHandler = (evt) => {
-    console.log(evt.target.classList);
-    evt.target.classList.add('clicked');
-  };
-
   return (
-    <div className="container">
-      <div className="button clicked">기본</div>
-      <div className="button" onClick={clickHandler}>
-        상세
-      </div>
+    <div style={{ marginBottom: '50px' }}>
+      <label className="toggle">
+        <input type="checkbox" />
+        <span className="toggle-slider" />
+        <div className="item1">기본</div>
+        <div className="item2">상세</div>
+      </label>
     </div>
   );
 };
