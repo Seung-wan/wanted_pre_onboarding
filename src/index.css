@@ -86,10 +86,6 @@ input:checked + .toggle-slider:before {
   color: #999;
 }
 
-/* .tab > .tab-container.checked {
-  color: black;
-} */
-
 .tab > .tab-container > label {
   cursor: pointer;
 }
@@ -146,9 +142,6 @@ input:checked + .toggle-slider:before {
   position: relative;
   width: 100%;
   height: 30px;
-  /* display: flex;
-  position: relative;
-  justify-content: space-between; */
 }
 
 .circle {
@@ -207,11 +200,6 @@ input[type='range'] {
   background-size: 30% 100%;
   cursor: pointer;
 }
-/* #range:hover,
-#range:focus {
-  accent-color: #009999;
-  outline: none;
-} */
 
 input[type='range']::-webkit-slider-runnable-track {
   box-shadow: none;

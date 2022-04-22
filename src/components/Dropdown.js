@@ -13,13 +13,7 @@ function Dropdown() {
   const [symbol, setSymbol] = useState('');
   const [selectedWord, setSelectedWord] = useState('All Symbols');
   const inputRef = useRef();
-  // const [item, setItem] = useState([
-  //   'BTCUSD.PERP',
-  //   'ETHUSD.PERP',
-  //   'BCHUSD.PERP',
-  //   'LTCUSD.PERP',
-  //   'XRPUSD.PERP',
-  // ]);
+
   const [searchItem, setSearchItem] = useState([
     'BTCUSD.PERP',
     'ETHUSD.PERP',
