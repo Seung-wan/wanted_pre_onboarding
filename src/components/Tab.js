@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 function Tab() {
-  const [tabs, setTabs] = useState([
+  const [tabs, _] = useState([
     { id: 1, kor: '감자', eng: 'potato' },
     { id: 2, kor: '고구마', eng: 'sweetPotato' },
     { id: 3, kor: '카레라이스', eng: 'curryRice' },

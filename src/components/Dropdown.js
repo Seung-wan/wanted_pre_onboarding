@@ -71,7 +71,6 @@ function Dropdown() {
             onChange={onChangeSymbol}
             ref={inputRef}
           />
-          {/* TODO: 아이콘이 width를 차지에서 인풋이 클릭이 안되는 상황 */}
           <i className="fa-solid fa-magnifying-glass" />
         </div>
         <div className="item">All Symbols</div>
