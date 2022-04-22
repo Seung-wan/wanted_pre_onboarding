@@ -2,6 +2,8 @@
 
 ### 우선 CSS가 많이 부족하다는 것을 이번 과제를 통해 많이 느끼게 되었습니다, 그리고 부족한 부분을 깨달아서 아주 좋은 시간이었습니다.
 
+[시연 링크](https://wanted-pre-onboarding-theta.vercel.app)
+
 ---
 
 ## Toggle

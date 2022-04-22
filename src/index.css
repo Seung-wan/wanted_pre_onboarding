@@ -41,6 +41,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: #ccc;
+  border-radius: 30px;
 }
 
 .toggle-slider:before {
@@ -52,6 +53,7 @@ body {
   bottom: 4px;
   background-color: white;
   transition: 0.4s;
+  border-radius: 30px;
 }
 
 input:checked + .toggle-slider:before {
