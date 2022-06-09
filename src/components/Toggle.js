@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Toggle = () => {
   return (
     <div style={{ marginBottom: '50px' }}>
